@@ -17,7 +17,7 @@
 - Postgresql database
 
 ##### Clone the repository
-
+git clone https://github.com/BhaskarKumar7/ums-repo.git
 
 ##### Navigate to the project directory
 cd {project-location}
@@ -45,8 +45,8 @@ This project has got two Api's
 - spring.datasource.url=jdbc:postgresql://localhost:{your db port no}/ums
 
 ## Running the Tests
-Test cases are implemented for controller and service class methods.
-mvn test
+- Test cases are implemented for controller and service class methods.
+- run mvn test in cmd to execute the test cases
 
 ## Built With
 - spring boot version (3.3.0)
