@@ -33,9 +33,38 @@ This project has got two Api's
 - [POST] http://localhost:9787/api/user/register
 	- This end point accepts a JSON request body containing the user details and validates it.
 	- This end point also return appropriate responses to indicate success or failure of the registration process. 
+##### CURL command to test the api
+curl -X 'POST' \
+  'http://localhost:9787/api/user/register' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "firstName": "Ramesh",
+  "lastName": "Kumar",
+  "userName": "ram004",
+  "password": "ram676",
+  "email": "ram@demo.com",
+  "mobileNo": "6261559793",
+  "gender": "male",
+  "dateOfBirth": "09-06-1987",
+  "address": {
+    "addressLine": "asssssssssssssssss",
+    "country": "India",
+    "state": "Tamilnadu",
+    "city": "chennai",
+    "pincode": "634242",
+    "doorNo": "89-D"
+  }
+}'
+
 - [GET] http://localhost:9787/api/user/fetch
 	- This end point fetches the users information from the database based on username as request parameter.
 	- This end point also returns appropriate responses to indicate success or failure of the user fetch process.
+##### CURL command to test the api
+curl -X 'GET' \
+  'http://localhost:9787/api/user/fetch?userName=sk002' \
+  -H 'accept: */*'
+  
 - [SWAGGER END POINT] http://localhost:9181/swagger-ui/index.html
 
 ## Configuration
