@@ -1,0 +1,18 @@
+{
+  "userId": 1,
+  "firstName": "Bhaskar kumar",
+  "lastName": "Aligi",
+  "userName": "bas007",
+  "email": "test@demo.com",
+  "mobileNo": "7853951139",
+  "gender": "MALE",
+  "dateOfBirth": "12-05-2001",
+  "address": {
+    "addressLine": "100 feet road,ayyapa society, madhapur",
+    "country": "India",
+    "state": "Telangana",
+    "city": "Hyderabad",
+    "pincode": "422265",
+    "doorNo": "87-B"
+  }
+}
