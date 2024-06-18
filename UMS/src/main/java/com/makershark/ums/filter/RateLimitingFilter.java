@@ -5,6 +5,7 @@ import java.time.Duration;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import io.github.bucket4j.Bandwidth;
@@ -20,9 +21,14 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @SuppressWarnings("deprecation")
-@Component
+@Component(value = "rateLimitFilter")
+@Order(1)
 public class RateLimitingFilter extends HttpFilter {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7879604572435310329L;
 	private final Map<String, Bucket> cache;
 	
 	public RateLimitingFilter() {
@@ -37,7 +43,6 @@ public class RateLimitingFilter extends HttpFilter {
 		String ipAddress = httpRequest.getRemoteAddr();
 		Bucket bucket = cache.get(ipAddress);
 		log.info("fetched ip address-----> {}",ipAddress);
-		//log.info("bucket---> {}",bucket);
 		if(null == bucket)	{
 			log.info("-- bucket is null --");
 			bucket = createNewBucket();
